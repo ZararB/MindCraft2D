@@ -8,6 +8,12 @@ def index(request):
 
     return HttpResponse("Hello World")
 
-def mindmap(request, rootNode):
+def mindmap(request, rootNodeTitle):
     
-    return HttpResponse(rootNode)
+    rootNode = Idea.nodes.get(title=rootNodeTitle)
+    
+    # Visualize graph
+
+
+    return render(request, 'mindmap/mindmap.html', {'nodes':'rootNode'})
+

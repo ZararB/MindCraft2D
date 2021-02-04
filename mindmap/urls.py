@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
         path('', views.index, name='index'),
-        path('<str:rootNode>', views.mindmap, name='mindmap')
+        path('<str:rootNodeTitle>', views.mindmap, name='mindmap')
 ]
 
 
