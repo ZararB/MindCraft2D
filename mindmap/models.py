@@ -9,8 +9,8 @@ class User(StructuredNode):
     uid = UniqueIdProperty()
     username = StringProperty()
     
-    '''
-    #TODO User authentication  
+    ''' 
+    #TODO User Authentication 
     friends = Relationship('User', 'FRIEND')
     '''
 

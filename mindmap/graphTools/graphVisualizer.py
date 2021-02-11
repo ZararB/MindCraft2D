@@ -8,6 +8,8 @@ def orbital_visualization(graph, width=1920, height=1080, radius=200):
     Uses a simple orbital pattern for visualization
     '''
 
+    #TODO check if cords already exist
+
     origin_x = width / 2 
     origin_y = height / 2 
 
@@ -51,4 +53,6 @@ def orbital_visualization(graph, width=1920, height=1080, radius=200):
             edge.y1 = edge.node1.cy
             edge.x2 = edge.node2.cx
             edge.y2 = edge.node2.cy
+
+#TODO Implement better visualization algorithms 
 

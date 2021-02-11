@@ -11,7 +11,7 @@ urlpatterns = [
         path('settings', views.settings, name='settings'),
         path('save', views.save, name='save'),
         path('open', views.open, name="open"),
-        path('deleteNode', views.delete, name="delete"),
+        path('deleteNode', views.deleteNode, name='deleteNode'),
         path('<str:rootNodeLabel>', views.mindmap, name='mindmap')
 ]
 

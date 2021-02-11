@@ -28,4 +28,6 @@ class Graph:
             self.nodes.append(node)
             self.edges.append(edge)
 
+
+    #TODO Convert graph to dictionary or json for http reponses
      

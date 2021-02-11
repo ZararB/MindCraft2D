@@ -5,7 +5,7 @@ function expandNode(sender) {
     console.log(nodeId);
 
 
-    // Open window showing details of node
+    //TODO: Open window showing details of node
 
 }
 
@@ -13,7 +13,7 @@ function addNode(sender) {
 
     var nodeId = sender.id ;
 
-    // Draw add node menu 
+    // TODO: Draw add node menu 
 
 
 
@@ -21,6 +21,9 @@ function addNode(sender) {
 }
 
 function deleteNode(sender) {
+
+    //TODO Figure out how to send httpRequests and display responses 
+    
 
     var nodeId = sender.id ;
     var rootNodeLabel = document.getElementsByClassName('rootNode')[0].id;
@@ -47,8 +50,11 @@ function deleteNode(sender) {
 
 function drawGraph(graph) {
 
-    
-    
+    //TODO Draw the nodes and edges at their respect positions
+
 }
 
+function move() {
 
+    //TODO Move graph depending on user input like wasd and/or mosue drags
+}

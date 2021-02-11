@@ -28,11 +28,13 @@ def open(request):
 
     return redirect('/' + rootNodeLabel)
 
-def delete(request):
+def deleteNode(request):
 
     nodeId = int(request.POST['nodeId'])
     rootNodeLabel = request.POST['rootNodeLabel']
     node = Idea.nodes.get_or_none(id=nodeId)
+
+    #TODO Check if node belongs to user 
 
     if node:
         node.delete()
@@ -54,9 +56,7 @@ def save(request):
 
 def mindmap(request, rootNodeLabel):
 
-    '''
     
-    ''' 
     graph = Graph(rootNodeLabel)
     graphVisualizer.orbital_visualization(graph)
     
