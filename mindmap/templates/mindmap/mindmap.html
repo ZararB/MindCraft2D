@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+
+<html>
+
+	
+	
+	<head>
+
+		<meta charset="utf-8">
+		<title>MindCraft2D></title>
+
+	</head>
+
+	<body>
+	
+		{% load static %}
+
+		<link rel="stylesheet" type="text/css" href="{% static 'mindmap/styles/styles.css' %}">
+
+		<div id="{{rootNodeLabel}}" class="rootNode">
+
+
+		{% for node in graph.nodes %}
+
+			<div id={{node.id}} class="node-div" style="left: {{node.cx}};top: {{node.cy}};" >
+				
+				<button id="{{node.id}}-button" class="node-button" onclick="expandNode(this)">
+					{{node.label}}
+				</button>
+
+				<button class="add-node-button" onclick="addNode(this)">
+					+
+				</button>
+
+				<button class="delete-node-button" onclick="deleteNode(this)">
+					-
+				</button>
+					
+			
+			</div>
+
+		{% endfor %}
+
+		{% for edge in graph.edges %}
+
+
+
+		{% endfor %}
+
+		</div>
+
+		
+
+		<script src="{% static 'mindmap/scripts/mindmap.js' %}">
+		</script>
+	
+	</body>
+
+</html>
+
+
+

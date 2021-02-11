@@ -16,7 +16,7 @@ class User(StructuredNode):
 
 class Idea(StructuredNode):
     uid = UniqueIdProperty()
-    title = StringProperty()
+    label = StringProperty()
     description = StringProperty()
     author = Relationship('User', 'created_by')
 

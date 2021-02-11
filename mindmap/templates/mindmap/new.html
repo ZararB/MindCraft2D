@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>MindCraft2D></title>
+
+	</head>
+
+	<body>
+		<h1>New</h1>
+		
+
+		<form action="{% url 'save' %}" method="post">
+		{% csrf_token %}
+
+			<label for="rootNodeLabel">Root Node Label:</label><br>
+			<input type="text" id="rootNodeLabel" name="rootNodeLabel"><br>
+
+			<label for="rootNodeParent">Root Node Parent:</label><br>
+			<input type="text" id="rootNodeParent" name="rootNodeParent"><br>
+			<input type="submit" value="Create">
+
+		</form> 
+		
+
+	</body>
+
+</html>
+
+
+

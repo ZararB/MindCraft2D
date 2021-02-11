@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+<html>
+
+	
+	
+	<head>
+
+		<meta charset="utf-8">
+		<title>MindCraft2D></title>
+		<script src="https://d3js.org/d3.v6.min.js"></script>
+
+	</head>
+
+	<body>
+	
+		{% load static %}
+		
+		<h1 class = "wabba" id="title">MindCraft</h1>
+		<p>A tool to create and share graphs</p>
+		
+		<h2><a href="{% url 'new' %}">Create</a></h2>
+		<h2><a href="{% url 'load'%}">Load</a></h2>
+		<h2><a href="{% url 'learning' %}">Learning</a></h2>
+		<h2><a href="{% url 'settings' %}">Settings</a></h2>
+		
+		
+		
+	</body>
+
+</html>
+
+
+
