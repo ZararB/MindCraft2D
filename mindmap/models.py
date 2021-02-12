@@ -1,7 +1,7 @@
 from django.db import models
 from neomodel import * 
 from neomodel import StructuredNode, StructuredRel, StringProperty, DateProperty, UniqueIdProperty, Relationship, RelationshipTo, RelationshipFrom
-
+from neomodel import IntegerProperty
 # Create your models here.
 
 class User(StructuredNode):

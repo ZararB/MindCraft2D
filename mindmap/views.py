@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import User, Idea 
-from .graphTools import graphVisualizer
+from .graphTools import GraphVisualization
 from .graphTools.graph import Graph 
 from django.shortcuts import redirect
+import json 
 
 def index(request):
     return render(request, 'mindmap/index.html')
@@ -30,16 +31,19 @@ def open(request):
 
 def deleteNode(request):
 
-    nodeId = int(request.POST['nodeId'])
-    rootNodeLabel = request.POST['rootNodeLabel']
-    node = Idea.nodes.get_or_none(id=nodeId)
-
-    #TODO Check if node belongs to user 
+    data = json.loads(request.body) 
+    
+    uid = data['nodeId'][:-14]
+    rootNodeLabel = data['rootNodeLabel']
+    node = Idea.nodes.get_or_none(uid=uid)
 
     if node:
         node.delete()
 
-    return redirect('/' + rootNodeLabel)
+    graph = Graph('Existence').toJson()
+
+    return HttpResponse(graph, content_type='application/json')
+
 
 
 
@@ -52,13 +56,25 @@ def save(request):
 
     return redirect('/' + rootNodeLabel)
 
+def setupDb(request):
+
+    rootNode = Idea(label="Existence").save()
+
+    projects = Idea(label="Projects").save()
+
+    adminAccess = Idea(label="Admin Access").save()
+
+    rootNode.children.connect(projects)
+    rootNode.children.connect(adminAccess)
+
+    return redirect('/Existence')
 
 
 def mindmap(request, rootNodeLabel):
 
     
     graph = Graph(rootNodeLabel)
-    graphVisualizer.orbital_visualization(graph)
+    GraphVisualization.orbital_visualization(graph)
     
     
 

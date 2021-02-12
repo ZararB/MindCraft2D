@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL', 'bolt://neo4j:password@localhost:7687')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,8 +1,8 @@
 class Node:
 
-    def __init__(self, id=None, label=None, description=None, cx=None, cy=None):
+    def __init__(self, uid=None, label=None, description=None, cx=None, cy=None):
 
-        self.id = id
+        self.uid = uid
         self.label = label
         self.description = description
         self.cx = cx 

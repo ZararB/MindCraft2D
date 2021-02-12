@@ -19,27 +19,27 @@
 	</head>
 
 	<body scroll="no" style="overflow: hidden">
-	
+		
 		{% load static %}
 
 		<link rel="stylesheet" type="text/css" href="{% static 'mindmap/styles/styles.css' %}">
 
-		<div id="{{rootNodeLabel}}" class="rootNode">
+		<div id="{{ rootNodeLabel }}" class="rootNode">
 
 
 		{% for node in graph.nodes %}
 
-			<div id={{node.id}} class="node-div" style="left: {{node.cx}};top: {{node.cy}};" >
+			<div id="{{node.uid}}-div" class="node-div" style="left: {{node.cx}};top: {{node.cy}};" >
 				
-				<button id="{{node.id}}-button" class="node-button" onclick="expandNode(this)">
+				<button id="{{node.uid}}-button" class="node-button" onclick="expandNode(this)">
 					{{node.label}}
 				</button>
 
-				<button class="add-node-button" onclick="addNode(this)">
+				<button id="{{node.uid}}-add-button" class="add-node-button" onclick="addNode(this)">
 					+
 				</button>
 
-				<button class="delete-node-button" onclick="deleteNode(this)">
+				<button id="{{node.uid}}-delete-button" class="delete-node-button" onclick="deleteNode(this)">
 					-
 				</button>
 					
@@ -56,10 +56,8 @@
 
 		</div>
 
-		
-
-		<script src="{% static 'mindmap/scripts/mindmap.js' %}">
-		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="{% static 'mindmap/scripts/mindmap.js' %}"></script>
 	
 	</body>
 
