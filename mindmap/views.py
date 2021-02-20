@@ -29,6 +29,7 @@ def open(request):
 
     return redirect('/' + rootNodeLabel)
 
+
 def deleteNode(request):
 
     data = json.loads(request.body) 

@@ -1,1 +1,2 @@
-TODO: Install web server 
+TODO: Install apache web server 
+TODO: Figure out how user authentication works 

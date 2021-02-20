@@ -59,14 +59,17 @@ function deleteNode(sender) {
             'X-CSRFTOKEN': csrftoken
         },
         body: JSON.stringify(data)
-    }).then(res => res.json()).then(data => console.log(data)).catch(err => console.log(err));
-
+    }).then(res => res.json()).then(data => window.location.reload(true)).catch(err => console.log(err));
+    
+    
 
 }
 
 function drawGraph(graph) {
 
     //TODO Draw the nodes and edges at their respect positions
+
+
 
 }
 
