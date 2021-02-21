@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 import json 
 
 def index(request):
-    return render(request, 'mindmap/index.html')
+    return render(request, 'index.html')
 
 def new(request):
     return render(request, 'mindmap/new.html')
